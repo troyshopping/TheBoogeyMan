@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://files.catbox.moe/ysnv1w.gif">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-3" rel="stylesheet">
+    <meta property="og:title" content="gig" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://trought.lol" />
+    <meta property="og:image" content="https://i.pinimg.com/564x/77/dc/c5/77dcc548b355db557cdbd19e3bc141b6.jpg" />
+    <meta property="og:description" content="珊瑚" />
+    <meta name="theme-color" content="#00000">
     <title></title>
 </head>
 <body>
@@ -14,8 +21,8 @@
             <div class="icon">
             </div>
             <div class="pfp"><img src="https://cdn.discordapp.com/attachments/1209338482535698435/1220981014210412555/2071092bf51c331d36b668212d2cd7f5.jpg?ex=6610ea2e&is=65fe752e&hm=9839b837fd0826e55f3cdba98ad8755bea29c7e5e06dcfd25bebc72bd716e3cb&"></div>
-            <h1>@trought</h1>
-            <div class="text"><h3>discord.gg/fraudd</h3></div>
+            <h1>trought</h1>
+            <div id="typewriter"></div>
             <div class="socials">
                 <a href="https://discord.com/users/1193363588837036132" target="_blank"><img id="discord" src="discord.png" width="20px"></a>
                 <a href="https://t.me/petbe" target="_blank"><img id="telegram" src="telegram.png" width="20px"></a>
@@ -29,6 +36,16 @@
     </div>
 
     <audio autoplay src="YEN YUKE SPLEE MY STAIN !!!.wav"></audio>
+
+    <script>
+      document.addEventListener('keydown', function(event) {
+        if (event.key === "F12") {
+          window.location.href = 'https://fbi.bet'; 
+        }
+      });
+      </script>
+
+
 
     <script>
         function recursiveAnimateTitle(string) {
@@ -256,5 +273,45 @@ return div;
   // Update position on window resize
   window.addEventListener('resize', updateFixedElementPosition);
 </script>
-</script>
+
+<script>
+  const sentences = [
+    "discord.gg/fools",
+    "I ❤️ skidding",
+    "@trought"
+  ];
+  
+  const typewriter = document.getElementById('typewriter');
+  let currentSentenceIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
+  
+  function type() {
+    const currentSentence = sentences[currentSentenceIndex];
+  
+    if (isDeleting) {
+      typewriter.textContent = currentSentence.substring(0, currentCharIndex - 1);
+      currentCharIndex--;
+    } else {
+      typewriter.textContent = currentSentence.substring(0, currentCharIndex + 1);
+      currentCharIndex++;
+    }
+  
+    if (!isDeleting && currentCharIndex === currentSentence.length + 1) {
+      isDeleting = true;
+      setTimeout(type, 500); // Delay before deleting (slightly longer)
+    } else if (isDeleting && currentCharIndex === 0) {
+      isDeleting = false;
+      currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
+      setTimeout(type, 100); // Faster typing speed for next sentence
+    } else {
+      setTimeout(type, isDeleting ? 20 : 50); // Faster typing speed
+    }
+  }
+  
+  // Start typing
+  type();
+  </script>
+
+
 </body>
